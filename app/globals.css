@@ -5,13 +5,23 @@
 :root {
   --color-accent: #E8503E;
   --color-dark: #1A1A2E;
+  --color-bg: #FFFFFF;
+  --color-fg: var(--color-dark);
+  --color-fg-muted: #6B7280;
+}
+
+.dark {
+  --color-bg: #1A1A2E;
+  --color-fg: #F5F5F7;
+  --color-fg-muted: #9CA3AF;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background: #FFFFFF;
-  color: var(--color-dark);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* ── Shimmer-Effekt für das Motto ── */
@@ -28,13 +38,13 @@ body {
 .shimmer-text {
   background: linear-gradient(
     90deg,
-    var(--color-dark) 0%,
-    #6B7280 20%,
+    var(--color-fg) 0%,
+    var(--color-fg-muted) 20%,
     var(--color-accent) 40%,
     #F97066 50%,
     var(--color-accent) 60%,
-    #6B7280 80%,
-    var(--color-dark) 100%
+    var(--color-fg-muted) 80%,
+    var(--color-fg) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
